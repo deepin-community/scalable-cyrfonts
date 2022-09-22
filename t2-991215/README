@@ -1,0 +1,109 @@
+This is the file README of the T2 package.
+
+T2 package is Copyright 1997-1999 Werner Lemberg, Vladimir Volovich
+and any individual authors listed elsewhere in package files.
+
+It may be distributed under the conditions of the LaTeX Project Public
+License, either version 1.1 of this license or (at your option) any
+later version.  The latest version of this license is in
+   http://www.latex-project.org/lppl.txt
+and version 1.1 or later is part of all distributions of LaTeX
+version 1999/06/01 or later.
+
+The `T2' package is available at
+
+	CTAN:macros/latex/contrib/supported/t2
+	ftp://ftp.vsu.ru/pub/tex/t2-current.tar.gz
+
+Starting with the 1998/12/01 release, LaTeX2e officially supports new
+standard Cyrillic font encodings (T2A, T2B, T2C, X2) and various
+Cyrillic input encodings, which form the `cyrillic' bundle of the
+official LaTeX distribution (CTAN:macros/latex/required/cyrillic).
+Installation procedure is described in the file `00readme.txt' which
+is part of the `cyrillic' bundle. Note: the `cyrillic' bundle will not
+work with LaTeX2e releases older than 1998/12/01.
+
+Starting with the version 3.6k, BABEL system officially supports T2
+encodings.  You can get the distribution at
+
+	CTAN:macros/latex/required/babel
+
+The installation and usage of Cyrillic in LaTeX are also described in
+the file `cyrguide.tex' which is part of the base LaTeX2e
+distribution. In particular, in addition to the `cyrillic' bundle you
+will need at least LH fonts and hyphenation patterns.
+
+The latest version of the LH fonts package (v3.20) which supports T2A,
+T2B, T2C, X2 standard Cyrillic TeX font encodings (and also LCY, OT2,
+and some other encodings) is available at
+
+	CTAN:fonts/cyrillic/lh
+	http://www.cemi.rssi.ru/cyrtug/files/cyremtex.98
+	http://www.cemi.rssi.ru/cyrtug/eng/news.htm
+	ftp://ftp.vsu.ru/pub/tex/lhfnt-3.20.tar.gz
+
+You can find a collection of Russian hyphenation patterns which
+support T2 (and other) font encodings in a `ruhyphen' package at
+
+	CTAN:language/hyphenation/ruhyphen
+	ftp://ftp.vsu.ru/pub/tex/ruhyphen.tar.gz
+
+Some additional support files and packages are located in
+subdirectories of the `T2' package.
+
+* the `mathtext' package which makes it possible to use Cyrillic
+  letters `transparently' in math formulae. To generate the package file
+  `mathtext.sty', run the command "latex mathtext.ins". The package
+  supports an option `warn', which will produce warning messages in case
+  of using Cyrillic letters in math formulae. Load this package _before_
+  babel and/or fontenc.
+
+* the package `citehack.sty' redefines some of the LaTeX commands in
+  order to make it possible to use Cyrillic letters as arguments of
+  \cite and \bibitem commands (it is not specific to Cyrillic; the same
+  problems would arise if one will try to use characters defined via the
+  inputenc package as labels or notes of \cite and \bibitem commands).
+  It also makes it possible to use inputenc-generated characters in
+  \label and \ref arguments.
+
+  This is a temporary hack.  Hopefully, the corresponding commands will
+  be corrected in the next release of LaTeX2e.
+
+* read a `README' file in the `etc/rubibtex' directory if you are
+  using bibtex.
+
+* read a `README' file in the `etc/rumkidx' directory if you are using
+  makeindex.
+
+* the directory `examples' contains some examples which demonstrate
+  usage of Cyrillic packages. In particular, the `example1.tex' contains
+  examples of using different Cyrillic font encodings and input
+  encodings in LaTeX.
+
+* read a `README' file in the `cyrplain' directory if you would like
+  to use Cyrillic in Plain TeX based macro-packages.
+
+* the `cyrfinst' directory contains Cyrillic support for fontinst
+  package.
+
+* the `enc-maps' directory contains various mappings for charsets and
+  encodings.
+
+There are mailing lists devoted to problems of Cyrillic and
+multilingual TeX and T2 encodings, where you can try to get support on
+setting up and using Cyrillic packages with TeX & friends.
+
+To subscribe to english-language list, mail to CyrTeX-en-on@vsu.ru
+
+To subscribe to russian-language list, mail to CyrTeX-ru-on@vsu.ru
+
+You will be asked to confirm your action by additional email.
+Mailing list archives are available at
+
+  https://info.vsu.ru/Lists/default.html
+
+
+Happy TeXing!
+
+    Werner LEMBERG <wl@gnu.org>
+    Vladimir VOLOVICH <TeX@vvv.vsu.ru>

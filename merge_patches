@@ -1,0 +1,26 @@
+#!/usr/bin/fontforge
+
+Open ($1);
+
+i=2
+while (i < $argc)
+   MergeFonts($argv[i])
+   ++i
+endloop
+
+# Add stressed Cyrrilic small letter I if missing
+if (! InFont("uni045D") && InFont("afii10074") && InFont("grave"))
+   Reencode("unicode")
+   Select("afii10074")
+   Copy()
+   Select("uni045D")
+   Paste()
+   Select("grave")
+   Copy()
+   Select("uni045D")
+   PasteInto()
+   RemoveOverlap()
+endif
+
+Save ();
+Close ();

@@ -1,0 +1,55 @@
+This package makes the following font families available to TeX:
+
+ftm -- Free Times
+fhv -- Free Helvetian
+fcr -- Free Courier
+fag -- Free Avant Garde
+fbk -- Free Bookman
+fsb -- Free Schoolbook
+fpl -- Free Paladin
+fta -- Teams
+fsj -- OldSlavic
+
+For example you can change to the medium series slanted shape Teams
+font by the following command:
+
+\usefont{T2A}{fta}{m}{sl}
+
+It is much more convenient to use some of the provided style packages
+instead.  They are:
+
+Style             Roman             Sans Serif         Typewriter
+---------------------------------------------------------------------
+cyrtimes          Free Times        Free Helvetian     Courier
+cyrbookman        Free Bookman      Free Avant Garde   Courier
+cyrnewcent        Free Schoolbook   Free Avant Garde   Courier
+cyrpalatino       Free Paladin      Free Helvetian     Courier
+teams             Teams             Free Avant Garde   Courier
+cyrncntrsbk       Free Schoolbook   (undefined)        (undefined)
+cyrhelvetic       Free Helvetian    (undefined)        (undefined)
+cyrhelvet         (undefined)       Free Helvetian     (undefined)
+cyravantgar       Free Avant Garde  (undefined)        (undefined)
+cyravant          (undefined)       Free Avant Garde   (undefined)
+cyrcourier        (undefined)       (undefined)        Courier
+              
+For example if you want rm to be the Free Bookman font and sf to be
+Free Avant Garde, put the following command in your LaTeX document
+immediately after the \usepackage{fontenc} and \usepackage{inputenc}
+commands:
+
+\usepackage{cyrbookman}
+
+Not all non-Slavic Cyrillic letters are available in the fonts of the
+package scalable-cyrfonts.  The font Teams contains only the Russian
+(and consequently the Bulgarian also) letters.
+
+The ligature `---' in all font families (with the exception of fta) is
+longer than the Cyrillic emdash.  Use the canonical form for the
+Cyrillic emdash: "---.
+
+The font family fta doesn't contain the French quotes.
+
+--
+Anton Zinoviev <zinoviev@debian.org>
+
+ -- Anton Zinoviev <zinoviev@debian.org>, Fri, 14 Sep 2012 16:36:38 +0300

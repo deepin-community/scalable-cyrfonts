@@ -1,0 +1,152 @@
+#!/usr/bin/make -f
+
+#    Copyright (C) 2000,2001,2002,2003 Anton Kirilov Zinoviev
+
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 2 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#    along with this program; if not, write to the Free Software
+#    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+#    My e-mail is zinoviev@debian.org
+
+SHELL = /bin/bash
+TEXMFROOT = usr/share/texmf
+PSFONTSROOT = /usr/share/fonts/X11/Type1
+TTFFONTS = usr/share/fonts/truetype
+CIDFONTS = usr/share/fonts/CID
+TYPE1FORMAT = pfb
+texpackage = scalable-cyrfonts-tex
+
+build:
+	dh_testdir
+	-rm -f installdirs
+	$(MAKE)
+	-rm -rf fontinst2
+	mkdir fontinst2
+	cp fontinst/*.sty fontinst/*.fd fontinst/*.vf fontinst/*.tfm fontinst2
+	-rm fontinst2/psyr*
+	touch build
+
+clean:
+	dh_testdir
+	$(MAKE) clean
+	-rm -rf fontinst2
+	-rm -rf debian/cyrfonts-X debian/cyrfonts-win
+#	-rm -f cyrfonts-X.tar.gz cyrfonts-win.zip
+	-rm -f build firstbuild
+	-rm -f installdirs
+	dh_clean
+
+cyrfonts-X.tar.gz: install-X
+	tar cf cyrfonts-X.tar -C debian cyrfonts-X
+	gzip -9f cyrfonts-X.tar
+
+cyrfonts-win.zip: install-win
+	cd debian/cyrfonts-win && zip -r ../../cyrfonts-win.zip *
+
+install-base: package = t1-cyrillic
+install-teams: package = t1-teams
+install-oldslavic: package = t1-oldslavic
+
+install-base install-teams install-oldslavic: fontbasenames = $(shell awk -f hint.awk -v cat=fontnames -v pkg=$(package) <hintinfo)
+
+fontnames = $(addprefix fonts/, $(addsuffix .$(TYPE1FORMAT), $(fontbasenames)))
+afmnames = $(addprefix fonts/, $(addsuffix .afm, $(fontbasenames)))
+fonts = $(fontnames) $(afmnames)
+
+install-base install-teams install-oldslavic: installdirs
+	install -d debian/$(package)/$(PSFONTSROOT)/
+	cp $(fonts) debian/$(package)/$(PSFONTSROOT)/
+	install -d debian/$(package)/etc/X11/fonts/Type1
+	cp $(package)-fonts.scale debian/$(package)/etc/X11/fonts/Type1/$(package).scale
+	cp $(package)-fonts.alias debian/$(package)/etc/X11/fonts/Type1/$(package).alias
+
+install-X: installdirs
+	install -d debian/cyrfonts-X/
+	cp fonts/*.{pfb,afm} debian/cyrfonts-X/
+	tail -n +2 -q *.scale | wc -l >debian/cyrfonts-X/fonts.scale
+	tail -n +2 -q *.scale >>debian/cyrfonts-X/fonts.scale
+	cat *.alias >>debian/cyrfonts-X/fonts.alias
+	for doc in debian/*.docs; do \
+		pkg=`basename $$doc .docs`; \
+		pkg=$${pkg#t1-}; \
+		install -d debian/cyrfonts-X/doc-$$pkg; \
+		for file in `cat $$doc`; do \
+			cp $$file debian/cyrfonts-X/doc-$$pkg/; \
+		done; \
+	done
+	cp debian/copyright debian/cyrfonts-X/COPYRIGHT
+	cp /usr/share/common-licenses/GPL debian/cyrfonts-X
+
+install-win: installdirs
+	install -d debian/cyrfonts-win/
+	cp fonts/*.ttf debian/cyrfonts-win/
+	for doc in debian/*.docs; do \
+		pkg=`basename $$doc .docs`; \
+		pkg=$${pkg#t1-}; \
+		install -d debian/cyrfonts-win/doc-$$pkg; \
+		for file in `cat $$doc`; do \
+			cp $$file debian/cyrfonts-win/doc-$$pkg/; \
+			todos debian/cyrfonts-win/doc-$$pkg/`basename $$file` ; \
+		done; \
+	done
+	cp debian/copyright debian/cyrfonts-win/COPYRIGHT
+	todos debian/cyrfonts-win/COPYRIGHT
+	cp /usr/share/common-licenses/GPL debian/cyrfonts-win
+	todos debian/cyrfonts-win/GPL
+
+install-tex: installdirs
+	install -d debian/$(texpackage)/$(TEXMFROOT)/fonts/map/dvips/$(texpackage)/
+	cp scalable-cyrfonts-tex.map debian/$(texpackage)/$(TEXMFROOT)/fonts/map/dvips/$(texpackage)/$(texpackage).map 
+	dh_installtex -p $(texpackage) map=Map,scalable-cyrfonts-tex.map
+	install -d debian/$(texpackage)/$(TEXMFROOT)/fonts/enc/dvips/$(texpackage)
+	cp 6r.enc debian/$(texpackage)/$(TEXMFROOT)/fonts/enc/dvips/$(texpackage)/
+	install -d debian/$(texpackage)/$(TEXMFROOT)/fonts/type1/public/$(texpackage)/
+	cp texfonts/*.$(TYPE1FORMAT) debian/$(texpackage)/$(TEXMFROOT)/fonts/type1/public/$(texpackage)/
+	install -d debian/$(texpackage)/$(TEXMFROOT)/fonts/afm/public/$(texpackage)/
+	cp texfonts/*.afm debian/$(texpackage)/$(TEXMFROOT)/fonts/afm/public/$(texpackage)/
+	install -d debian/$(texpackage)/$(TEXMFROOT)/fonts/tfm/public/$(texpackage)
+	cp fontinst2/*.tfm debian/$(texpackage)/$(TEXMFROOT)/fonts/tfm/public/$(texpackage)/
+	install -d debian/$(texpackage)/$(TEXMFROOT)/fonts/vf/public/$(texpackage)
+	cp fontinst2/*.vf debian/$(texpackage)/$(TEXMFROOT)/fonts/vf/public/$(texpackage)/
+	install -d debian/$(texpackage)/$(TEXMFROOT)/tex/latex/$(texpackage)
+	cp fontinst2/*.fd debian/$(texpackage)/$(TEXMFROOT)/tex/latex/$(texpackage)/
+	cp fontinst2/*.sty debian/$(texpackage)/$(TEXMFROOT)/tex/latex/$(texpackage)/
+
+install: install-base install-teams install-oldslavic install-tex cyrfonts-X.tar.gz cyrfonts-win.zip
+
+installdirs: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	touch installdirs
+
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installxfonts
+	dh_installdocs
+	dh_installchangelogs
+#	dh_link
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary-arch: build install
+
+binary: binary-indep binary-arch
+
+#.PHONY: build clean binary-indep binary-arch binary install

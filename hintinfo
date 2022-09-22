@@ -1,0 +1,38 @@
+a010013d	URWGothicCYR-Book	Free_Avant_Garde	Free_Avant_Garde_Book			Book	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+a010015d	URWGothicCYR-Demi	Free_Avant_Garde	Free_Avant_Garde_Demi			Demi	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+a010033d	URWGothicCYR-BookObli	Free_Avant_Garde	Free_Avant_Garde_Book_Oblique		Book	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+a010035d	URWGothicCYR-DemiObli	Free_Avant_Garde	Free_Avant_Garde_Demi_Oblique		Demi	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+b018012d	URWBookmanCYR-Ligh		Free_Bookman		Free_Bookman_Light				Light	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+b018015d	URWBookmanCYR-DemiBold		Free_Bookman		Free_Bookman_Demi				Demi	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+b018032d	URWBookmanCYR-LighItal		Free_Bookman		Free_Bookman_Light_Italic			Light	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+b018035d	URWBookmanCYR-DemiBoldItal	Free_Bookman		Free_Bookman_Demi_Italic			Demi	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+c059013d	CenturySchCYR-Roma	Free_Schoolbook	Free_Schoolbook_Roman		Roman	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+c059016d	CenturySchCYR-Bold	Free_Schoolbook	Free_Schoolbook_Bold		Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+c059033d	CenturySchCYR-Ital	Free_Schoolbook	Free_Schoolbook_Italic		Medium	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+c059036d	CenturySchCYR-BoldItal	Free_Schoolbook	Free_Schoolbook_Bold_Italic	Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n019003d	NimbusSansCYR-Regu		Free_Helvetian	Free_Helvetian				Medium	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n019004d	NimbusSansCYR-Bold		Free_Helvetian	Free_Helvetian_Bold				Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n019023d	NimbusSansCYR-ReguItal		Free_Helvetian	Free_Helvetian_Oblique			Medium	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n019024d	NimbusSansCYR-BoldItal		Free_Helvetian	Free_Helvetian_Bold_Oblique			Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n019043d	NimbusSansCYR-ReguCond		Free_Helvetian_Condensed	Free_Helvetian_Condensed			Medium	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n019044d	NimbusSansCYR-BoldCond		Free_Helvetian_Condensed	Free_Helvetian_Condensed_Bold		Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n019063d	NimbusSansCYR-ReguCondItal	Free_Helvetian_Condensed	Free_Helvetian_Condensed_Oblique		Medium	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n019064d	NimbusSansCYR-BoldCondItal	Free_Helvetian_Condensed	Free_Helvetian_Condensed_Bold_Oblique	Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n021003d	NimbusRomanCYR-Regu		Free_Times		Free_Times_Roman				Roman	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n021004d	NimbusRomanCYR-Medi		Free_Times		Free_Times_Bold				Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n021023d	NimbusRomanCYR-ReguItal		Free_Times		Free_Times_Italic				Medium	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n021024d	NimbusRomanCYR-MediItal		Free_Times		Free_Times_Bold_Italic			Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n022003d	NimbusMonCYR-Regu		Free_Courier		Free_Courier					Medium	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n022004d	NimbusMonCYR-Bold		Free_Courier		Free_Courier_Bold				Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n022023d	NimbusMonCYR-ReguObli		Free_Courier		Free_Courier_Oblique				Medium	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+n022024d	NimbusMonCYR-BoldObli		Free_Courier		Free_Courier_Bold_Oblique			Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+p052003d	URWPalladioCYR-Roma		Free_Paladin	Free_Paladin_Roman				Roman	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+p052004d	URWPalladioCYR-Bold		Free_Paladin	Free_Paladin_Bold				Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+p052023d	URWPalladioCYR-Ital		Free_Paladin	Free_Paladin_Italic				Medium	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+p052024d	URWPalladioCYR-BoldItal		Free_Paladin	Free_Paladin_Bold_Italic			Bold	Val	microsoft-cp1251 iso8859-1 iso8859-2 iso8859-15 iso8859-5 koi8-r koi8-u
+z003034d	ChanceryCYR-MediItal Free_Chancery	Free_Chancery_Italic				Normal	Val	iso8859-1 iso8859-2 microsoft-cp1251 iso8859-5 koi8-r
+teams		Teams-Normal			Teams		Teams_Normal				Normal	TopTeam	iso8859-1 microsoft-cp1251 iso8859-5 koi8-r
+teamsb		Teams-Bold			Teams		Teams_Bold				Bold	TopTeam	iso8859-1 microsoft-cp1251 iso8859-5 koi8-r
+teamsi		Teams-Italic			Teams		Teams_Oblique				Normal	TopTeam	iso8859-1 microsoft-cp1251 iso8859-5 koi8-r
+teamsbi		Teams-BoldItalic		Teams		Teams_Bold_Oblique			Bold	TopTeam	iso8859-1 microsoft-cp1251 iso8859-5 koi8-r
+OldSlavicRegu	OldSlavicRegu			OldSlavic	OldSlavic				Normal	Val	iso8859-1 microsoft-cp1251 iso8859-5 koi8-r

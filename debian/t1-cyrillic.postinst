@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+if which xftcache >/dev/null 2>&1; then
+	xftcache /usr/share/fonts/X11/Type1
+fi
+
+if which fc-cache >/dev/null 2>&1 && [ -f /etc/fonts/fonts.conf ]; then
+	fc-cache /usr/share/fonts/X11/Type1
+fi
+
+#DEBHELPER#

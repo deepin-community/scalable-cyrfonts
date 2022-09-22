@@ -1,0 +1,50 @@
+This is `rubibtex', a wrapper for `bibtex' which allows one to use
+Russian letters as item names in bibliography with BIBTEX. It is part
+of the T2 package.
+
+It is assumed that your rusification is based on a T2 package (for
+other rusifications this problem may be absent or may be solved
+differently).
+
+The discussed problem only arises when you are using Russian letters
+as item names (i.e., in the argument of \bibitem command).  This could
+generally be avoided: simply name the reference keys of your books
+with Latin letters, --- these reference keys are purely internal LaTeX
+values, and do not appear in the DVI file. There are no problems with
+using Russian letters in book names, and in all other places which go
+to the DVI file. But it _may_ be convenient to use Russian reference
+keys in your BIBTEX database files.
+
+You will need:
+
+1) LaTeX setup based on a T2 package (in particular, the citehack.sty
+   file which allows one to use Russian letters as references)
+
+2) BIBTEX which does not have problems with 8-bit characters
+   (otherwise it is impossible to use such BIBTEX in _any_ rusified TeX
+   environment). Unfortunately, the default bibtex32.exe and bibtex.exe
+   in a emTeX distribution appear to have problems with 8-bit characters.
+   Try using BIBTEX binaries found at CTAN:biblio/bibtex/8-bit.
+
+3) SED binary. It is available on any UNIX box. For DOS you can find
+   it at
+
+  ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2gnu/sed118b.zip
+
+   Copy `sed.exe' to a directory contained in %PATH% environment
+   variable.
+
+4) The `rubibtex' script/batch file.
+
+If reference names in your BIB database use russian letters, then run
+`rubibtex' instead of `bibtex' (otherwise you can safely run bibtex).
+
+If you are using DOS, copy `rubibtex.sed' to `\emtex\data' directory,
+and copy `rubibtex.bat' to `\emtex\bin' directory.
+
+If you are using UNIX, copy the `rubibtex' shell script to
+e.g. `/usr/local/bin' directory.
+
+Note: we assume a cp866 encoding (of BIBTEX database files) for DOS
+and koi8-r for UNIX. Change the encoding of `rubibtex.sed' or
+`rubibtex' script otherwise.

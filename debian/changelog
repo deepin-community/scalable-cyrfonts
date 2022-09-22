@@ -1,0 +1,360 @@
+scalable-cyrfonts (4.17+nmu1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Mon, 28 Dec 2020 02:40:21 +0100
+
+scalable-cyrfonts (4.17) unstable; urgency=medium
+
+  * Apply a patch by Sascha Steinbiss to use luatex instead of tex.
+    Closes: #852929.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Sun, 19 Feb 2017 16:47:50 +0300
+
+scalable-cyrfonts (4.16+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * fontinst/Makefile: updated location of texmf.cnf.  Closes: #713239.
+
+ -- David Prévot <taffit@debian.org>  Sat, 28 Dec 2013 22:39:50 -0400
+
+scalable-cyrfonts (4.16) unstable; urgency=low
+
+  * TeX font family renaming: fnc -> fsb (Free Schoolbook).  Closes: #593448.
+  * fontinst/Makefile: updated location of texmf.cnf.  Closes: #666647.
+  * Bump version (4.15 => 4.16). Closes: #668882.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Fri, 14 Sep 2012 17:42:37 +0300
+
+scalable-cyrfonts (4.15) unstable; urgency=low
+
+  * Use maintscript support in dh_installdeb rather than writing out
+    dpkg-maintscript-helper commands by hand.  We now simply Pre-Depend on
+    a new enough version of dpkg rather than using
+    'dpkg-maintscript-helper supports' guards, leading to more predictable
+    behaviour on upgrades.  Patch provided by Colin Watson, closes: #659741.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Mon, 13 Feb 2012 21:43:38 +0200
+
+scalable-cyrfonts (4.14) unstable; urgency=low
+
+  * Transition away from defoma.  Thanks to Paul Wise, closes: #649832.
+    Thanks to Christian PERRIER for the patch.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Tue, 29 Nov 2011 14:24:33 +0200
+
+scalable-cyrfonts (4.13) unstable; urgency=low
+
+  * Include cyrfonts-win.zip and cyrfonts-X.tar.gz in the source package
+    in order to assist users on other OS.  Thanks to Roland Hughes.
+  * Correct directory in the hint files.  Thanks to Jakob Bohm, Ionut
+    Georgescu, Drew Parsons and Ryo Furue,
+    closes: #551503, #551504, #551505, #410766.
+  * Add build-dependency on tex-common (>= 1.18).  Thanks to Manoj
+    Srivastava, closes: #553574.
+  * Do not recommend xfs.  Suggest xfs | xserver.  Thanks to Yavor
+    Doganov, closes: #546295.
+  * fontinst/Makefile: Assume that new fontinst is installed and use
+    t2/cyrfinst.
+  * Updated standards-version, remove duplicated word from the description
+    of t1-oldslavic.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Fri, 06 Nov 2009 15:35:09 +0200
+
+scalable-cyrfonts (4.12+nmu2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Urgency medium due to lenny-goal bug fix.
+  * Clear obsolete conffiles that were left over from etch for t1-cyrillic,
+    t1-oldslavic and t1-teams. Closes: #455040, #455042, #455043.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon, 24 Nov 2008 16:11:38 +0700
+
+scalable-cyrfonts (4.12+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Reintroduce 4.10-0.1 NMU, which was lost during later merge by maintainer:
+    Drop direct dependency on xutils (Closes: #405630)
+
+ -- Moritz Muehlenhoff <jmm@debian.org>  Fri, 22 Aug 2008 15:06:26 +0200
+
+scalable-cyrfonts (4.12) unstable; urgency=low
+
+  * Export FONTFORGE_LANGUAGE=pe variable for fontforge in convert_fonts.
+    Thanks to Lucas Nussbaum for reporting this bug and to Gregory Colpart
+    for providing a solution.  Closes: #442970.
+  * Do not ignore sub-make errors in the clean target in debian/rules.
+  * Updated standards-version: 3.7.3
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Sun, 17 Feb 2008 21:52:36 +0200
+
+scalable-cyrfonts (4.11) unstable; urgency=low
+
+  * Add Build-Dependency on texlive-font-utils.  Closes: #422480.  Thanks
+    to Jérémy Bobbio for reporting the problem and to Cyril Brulebois for
+    fixing it.
+  * In debian/rules remove an obsoleted hack to overcome a bug in
+    dh_installxfonts.
+  * Use debian/compat instead of DH_COMPAT.
+  * Do not install in /usr/share/fonts/type1.  Install directly in
+    /usr/share/fonts/X11/Type1.
+  * Invoke fc-cache or xftcache both on /usr/X11R6/lib/X11/fonts/Type1 and
+    /usr/share/fonts/X11/Type1.
+  
+ -- Anton Zinoviev <zinoviev@debian.org>  Mon, 16 Jul 2007 10:58:46 +0300
+
+scalable-cyrfonts (4.10) unstable; urgency=low
+
+  * Place the fonts in new X.org directories.  This was not urgent for
+    these packages, but at last: thanks to Joey Hess, 
+    closes: #362335, #362336, #362333.
+  * Updated standards version (3.6.6.2).
+  * Change Build-Dependency from sysutils to tofrodos.  Thanks to Matej
+    Vela, closes: #382172.
+  * Use dh_installtex, conform with the Debian TeX sub-policy, move files
+    as suggested by Frank Küster.  Thanks to Frank Küster, Juhapekka
+    Tolvanen and Yavor Doganov, closes: #338723, #368880, #353887.
+  * Fix in the script generating the map file a bug causing unexisting
+    fonts to be used.  Thanks to Javor_nik, closes: #346225.
+  * Updated Standards-Version (3.7.2)
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Mon, 24 Sep 2006 23:07:28 +0300
+
+scalable-cyrfonts (4.8) unstable; urgency=low
+
+  * Use "tex --ini" instead of initex and "tex" instead of "virtex"
+    because the new tetex-bin from experimental lacks "virtex" and
+    "initex" (see #329972).
+  * Include two versions of the T2 package in the source package and use
+    cyrfinst from them insted of the version of cyrfinst from tetex-src -
+    one of the versions is for use with the older fontinst and another for
+    use with the newer.  Remove build-dependency on tetex-src.  This
+    closes: #322433, thanks to Frank Küster.
+  * Register the fonts acording to the TeX package policy.  This makes
+    unnecessary for the user to edit the configuration files in /etc/texmf
+    in order to use this package.  Thanks to Andrey Kiselev,
+    closes: #312916.
+  * Generate TeX fonts for OT2 encoding also.  Thanks to Joerg Friedrich,
+    closes: #296455.
+  * Check for the existence of /etc/fonts/fonts.conf in t1-*.postinst.
+    Thanks to Nikita Youshchenko, closes: #303695.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Sun, 25 Sep 2005 22:19:44 +0300
+
+scalable-cyrfonts (4.7) unstable; urgency=low
+
+  * New upstream version of the URW fonts.  Thanks to Mashrab Kuvatov,
+    closes: #281726.
+      - integrated Serbian glyphs by Danilo Segan, thanks to Stefan
+        Baums, closes: #275214;
+      - fixed some Russian Cyrillic glyphs and width in NumbusMono (Free
+        Courier); 
+      - fixed bug that brokes printing from Qt;
+      - added vietnamese glyphs by The Thanh Han;
+      - applied Mashrab changes/additions for Uzbek, Tajik and other Asian
+        Cyrillic alphabets;
+      - fixed glyph names on Chancery so that Macedonian glyphs are in
+        place now (by Damjan);
+      - wided germandbls in NimbusSansReg/Obli (Free Helvetian).
+      - fixed fi/fl ligatures (separated back as suggested by Ralf
+        Stubner.  I hope this closes: #237425, thanks to Victor Porton.
+  * Do not patch the URW fonts for Serbian glyphs - the patch is applied
+    upstream
+  * Correct the description of the scalable-cyrfonts-tex package.
+    Describe the relations between this package and t1-cyrillic, t1-teams
+    and t1-oldslavic.  Add suggests to these packages.  Thanks to Andreas
+    Metzler, closes: #284212.
+  * Update the copyright file.
+  * Rename the font file names to keep them same as in the previous
+    version.  Due to limitations of Defoma the font file name may not
+    change.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Wed, 29 Dec 2004 11:46:20 +0200
+
+scalable-cyrfonts (4.6) unstable; urgency=low
+
+  * Install fonts again in the X11R6 hierarchy.  Thanks to Eugeniy
+    Meshcheryakov and Joshua Kwan, closes: #270081, #270346.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Wed,  8 Sep 2004 23:02:26 +1000
+
+scalable-cyrfonts (4.5) unstable; urgency=low
+
+  * Apply patch by Frank Küster to use generated texmf.cnf.  Thanks to
+    Roland Stigge, Florian Ernst, Frank Küster and Alastair McKinstry,
+    closes: #265861.
+  * Do not install fonts in X11R6 hierarchy.  Thanks to Florian Ernst.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Thu, 26 Aug 2004 11:31:48 +0300
+
+scalable-cyrfonts (4.4) unstable; urgency=low
+
+  * s/pfaedit/fontforge/g.  Thanks to Daniel Schepler, closes: #250467.
+  * Removed README.font_chages
+  * scalable-cyrfonts-tex.README.Debian: write that for unknown reason the
+    DVI viewers don't see the fonts.  The users have to convert the DVI
+    files to postscript or use pdftex/pdflatex.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Thu, 15 Jul 2004 12:08:55 +0300
+
+scalable-cyrfonts (4.3) unstable; urgency=low
+
+  * Add Serbian glyphs to the URW-based fonts.  Patch provided by Danilo
+    Segan.  Thanks to Frank Murphy, closes: #230840.
+  * Add stressed Cyrillic letter I to the fonts that miss it but have
+    regular Cyrillic letter I and grave.  Thanks to Alexander Shopov,
+    closes: #178399.
+  * The fonts were registered to defoma with wrong paths.  Now they are
+    moved from /usr/share/fonts/type1/t1-{cyrillic,teams,oldslavic} to
+    /usr/share/fonts/type1/{cyrillic,teams,oldslavic}.  This fixes the
+    broken links in /var/lib/defoma. 
+  * New target in debian/rules to create tar.gz package with the fonts.
+    The fonts in Debian differ from upstream and it makes sence to
+    create a package for non-Debian users.  I added also a target for zip
+    package with fonts for MS Windows.  Add build-depends on zip and
+    sysutils (for /usr/bin/todos).
+  
+ -- Anton Zinoviev <zinoviev@debian.org>  Fri,  7 May 2004 14:23:43 +0300
+
+scalable-cyrfonts (4.2) unstable; urgency=low
+
+  * Removed the gliphs for Cyrillic letters dje and tshe (small and
+    capital).  Thanks to Stefan Baums (closes: #227646).
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Wed, 21 Jan 2004 13:48:33 +0200
+
+scalable-cyrfonts (4.1) unstable; urgency=low
+
+  * The location of the default texmf.cnf file in recent Debian TeX
+    packages changed from /etc/texmf to /var/lib/texmf/web2c, hence
+    the value of TEXMFCNF in fontinst/Makefile should be changed.  Bun in
+    order to avoid future problems in case that the location of
+    texmf.cnf again changes I decided to include some example texmf.cnf in
+    fontinst/texmf.cnf.  Now scalable-cyrfonts doesn't depend on the
+    Debian system texmf.cnf during its compilation.  Thanks to Daniel
+    Schepler (closes: #209017).
+	
+ -- Anton Zinoviev <zinoviev@debian.org>  Fri, 19 Sep 2003 14:09:37 +0300
+
+scalable-cyrfonts (4.0) unstable; urgency=low
+
+  * New binary packages to follow the usual in Debian font package
+    naming policy (fontformat-family).  The old scalable-cyrfonts is
+    replaced by t1-cyrillic, t1-teams and t1-oldslavic.
+  * The old scalable-cyrfonts-x11 is removed.  For now the font
+    packages depend on xutils because I don't want to double them (as
+    the packages gsfonts and gsfonts-x11).  In future this dependency can
+    be removed when the postinst of xutils cares to update the Type1 font
+    directory by itself or some package symilar to x-ttcidfont-conf is
+    used. 
+  * The fontnames are changed in order to avoid possible trademark
+    infringements as this was suggested in debian-legal.  The word
+    `Free' ensures uniqueness of our names and the other part of the
+    names are English words (which ensures they are not registered).
+  * New upstream release of the URW fonts.  The new Courier fonts
+    (packaged as `Free Courier') have `isFixedPitch true' in their
+    FontInfo dictionary.  Thanks to Juliusz Chroboczek (closes: #177917).
+  * The source package contains .sfd rather than .pfb fonts.  They are
+    automaticaly converted to .pfb format by pfaedit.
+  * Type1 fonts preserve their original encoding.  In former packages they
+    were reencoded to cp1251 because StarOffice 5.1 needed such encoding.
+  * Fixed non-existing font in fonts.alias of the former package
+    scalable-cyrfonts-x11. 
+  * The build dependencies are properly classified into Build-Depends
+    and Build-Depends-Indep.  Thanks to Junichi Uekawa (closes: #158349).
+  * The TeX support is on different princible.  Now there is much better
+    support for the latin TeX encodings (OT1 and T1).
+  * The family of the narrowed versions of Helvetian is `Free Helvetian
+    Condensed' instead of `Free Helvetian' with width `condensed'.  This
+    is so because many applications seam to ignore fonts with width !=
+    normal when fonts with width == normal are present. 
+  * postinst and postrm of t1-* invoke xftcache and fc-cache if present.
+  * Updated `Standards-Version': 3.5.10.
+	
+ -- Anton Zinoviev <zinoviev@debian.org>  Mon,  9 Jun 2003 10:43:59 +0200
+
+scalable-cyrfonts (3.2) unstable; urgency=low
+
+  * Added Build-Depends-Indep on bzip2, thanks to Junichi Uekawa.
+    Closes: #142101.
+  * Updated Standards-Version: 3.5.6.1.
+  * Use dh_link instead of ln -s in the rules file in order to avoid
+    lengthy symlinks (too many ../../..).
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Sun,  2 Jun 2002 22:15:57 +0300
+
+scalable-cyrfonts (3.1) unstable; urgency=low
+
+  * New upstream release of URW fonts with new (alpha-version) font
+    Chancery.  New font OldSlavic.
+  * The TeX support was rewritten.  Now it is more flexible.
+  * Added Build-Depends-Indep on m4, thanks to Junichi Uekawa.
+  * Supports Defoma.
+  * The fontencoding X2 was removed because it doesn't work properly. 
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Thu, 21 Feb 2002 22:21:26 +0200
+
+scalable-cyrfonts (3.0) unstable; urgency=low
+
+  * Added new 8 fonts by Valek Fillipov.
+  * The fonts from BlackCat Linux are removed.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Tue, 30 Oct 2001 22:31:49 +0200
+
+scalable-cyrfonts (2.3) unstable; urgency=low
+
+  * Fixed wrong count of fonts in fonts.scale.  Now the count is
+    authomatically computable.
+  * First version with support for Unicode.
+  * scalable-cyrfonts-tex: cyrfonts.map wrongly used pfa fonts, but since
+    version 2.2 the package contains pfb fonts.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Sat, 23 Jun 2001 11:49:22 +0300
+
+scalable-cyrfonts (2.2) unstable; urgency=low
+
+  * Fixed a typo in fonts-scale.m4 which caused bad formated fonts.scale.
+  * Changed GSFONTS and RELATIVE_GSFONTS because the fonts in gsfonts
+    changed their place.  Build-Depend-Indep on gsfonts (6.0-2).
+  * scalable-cyrfonts-x11: Times, Helvetica and Courier are not provided
+    via fonts.alias but in fonts.{dir,scale}.
+  * scalable-cyrfonts-x11: Helvetica and Courier have oblique variants but
+    not italic and Times has only italic but not oblique.
+  * PFB fonts instead of PFA.
+  * scalable-cyrfonts conflicts with older versions of
+    scalable-cyrfonts-{x11,tex}.  scalable-cyrfonts-{x11,tex} require the
+    same version of scalable-cyrfonts.
+  * Symlinks of AFM files are added in scalable-cyrfonts-x11.
+  * I haven't had a time to make use of defoma. :-(
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Fri,  8 Jun 2001 11:32:10 +0300
+
+scalable-cyrfonts (2.1) unstable; urgency=low
+
+  * Adapted to use debhelper.
+  * Some changes because of the changes in tetex-src package.
+  * Double exclamation signs in *.scale and *.alias files.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Wed,  2 May 2001 23:14:29 +0300
+
+scalable-cyrfonts (2.0) unstable; urgency=low
+
+  * First upload to Debian.
+  * Complete remake of the TeX part.  Used fontinst instead of
+    afm2tfm.
+  * The package is made multibinary: scalable-cyrfonts,
+    scalable-cyrfonts-tex and scalable-cyrfonts-x11.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Sun, 11 Feb 2001 17:11:19 +0200
+
+scalable-cyrfonts (1.0) unstable; urgency=low
+
+  * First version.
+
+ -- Anton Zinoviev <zinoviev@debian.org>  Mon, 5 Feb 2001 23:31:35 +0200
+
+
+Local Variables:
+coding: utf-8
+End:

@@ -1,0 +1,40 @@
+#!/bin/bash
+
+set -e
+
+# See bug #442970
+export FONTFORGE_LANGUAGE=pe
+
+for i in fonts/*.pfa; do
+    afm=fonts/`basename $i .pfa`.afm
+    if [ -f $i -a -f $afm ]; then
+	./any2sfd $i y 2>/dev/null 1>/dev/null
+    else
+	./any2sfd $i n 2>/dev/null 1>/dev/null
+    fi
+done
+
+cat patched_fonts | 
+while read x; do
+    echo Patching $x ...
+    ./merge_patches $x 2>/dev/null 1>/dev/null
+done
+
+dir=fonts
+
+awk -f hint.awk -v cat=fontforge <hintinfo | 
+while read file ps family full weight fulltexname texwidth; do
+    for ext in sfd pfa pfb ttf; do
+	file2=${dir}/${file}.${ext}
+	if [ -f $file2 ]; then
+	    family=${family//_/ }
+	    full=${full//_/ }
+	    if [ -f ${dir}/${file}.afm ]; then m="y"; else m="n"; fi
+	    echo -n Converting $file "("$full")"...
+	    ./generate_fonts $m "$file2" "$ps" "$family" "$full" "$weight" \
+		"${fulltexname}" "${texwidth}" 2>/dev/null
+	    echo done.
+	    break
+	fi
+    done
+done

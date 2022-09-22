@@ -1,0 +1,23 @@
+#!/usr/bin/fontforge
+
+# Open the font
+Open ($2);
+if ($1 == "y")
+    MergeKern ($2:r + ".afm");
+endif
+SetFontNames ($3, $4, $5, $6);
+
+# Generate Type1
+Generate ($2:r + ".pfb", "", 1);
+#Generate ("cidfonts/" + $2:t:r + ".cid", "", 1);
+Generate ($2:r + ".ttf", "", 2);
+
+# Generate fonts for TeX
+if ($8 != "error")
+    SetFontNames ($3 + "CyrTeX");
+    Generate ("texfonts/" + $7 + "6w" + $8 + ".pfb", "", 1);
+    SetFontNames ($3 + "LatTeX");
+    Generate ("texfonts/" + $7 + "8a" + $8 + ".pfb", "", 1);
+endif
+
+Close ();

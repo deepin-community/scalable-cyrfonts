@@ -1,0 +1,285 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage{a4wide}
+\sloppy
+
+\newcommand{\testcyr}[3]{{\usefont{T2A}{#1}{#2}{#3}\LARGE Не подобьно
+  есть въ есень цветь искати ни старца на воискоу гнати.} \par}
+
+\newcommand{\beginfont}[1]{  
+  \newpage 
+  {
+    {\usefont{T2A}{fhv}{bx}{n}\Huge{#1}}\\
+    \bigskip{}\par
+  }
+}
+
+\newcommand{\face}[1]{\usefont{T2A}{fhv}{m}{n}#1\par\nopagebreak}
+
+\newcommand{\present}[2]{
+  \beginfont{#2}
+  
+  \face{Medium upright}\testcyr{#1}{m}{n}
+  \face{Medium italic}\testcyr{#1}{m}{it}
+%  \face{Medium slanted}\testcyr{#1}{m}{sl}
+  \face{Medium small caps}\testcyr{#1}{m}{sc}
+%  \face{Medium upright italics}\testcyr{#1}{m}{ui}
+%  \face{Medium outline}\testcyr{#1}{m}{ol}
+  
+  \face{Bold upright}\testcyr{#1}{b}{n}
+  \face{Bold italic}\testcyr{#1}{b}{it}
+%  \face{Bold slanted}\testcyr{#1}{b}{sl}
+  \face{Bold small caps}\testcyr{#1}{b}{sc}
+%  \face{Bold upright italics}\testcyr{#1}{b}{ui}
+%  \face{Bold outline}\testcyr{#1}{b}{ol}
+  
+%  \face{Condensed upright}\testcyr{#1}{c}{n}
+%  \face{Condensed italic}\testcyr{#1}{c}{it}
+%  \face{Condensed slanted}\testcyr{#1}{c}{sl}
+%  \face{Condensed small caps}\testcyr{#1}{c}{sc}
+%  \face{Condensed upright italics}\testcyr{#1}{c}{ui}
+%  \face{Condensed outline}\testcyr{#1}{c}{ol}
+  
+%  \face{Bold condensed upright}\testcyr{#1}{bc}{n}
+%  \face{Bold condensed italic}\testcyr{#1}{bc}{it}
+%  \face{Bold condensed slanted}\testcyr{#1}{bc}{sl}
+%  \face{Bold condensed small caps}\testcyr{#1}{bc}{sc}
+%  \face{Bold condensed upright italics}\testcyr{#1}{bc}{ui}
+%  \face{Bold condensed outline}\testcyr{#1}{bc}{ol}
+  
+%  \face{Bold extended upright}\testcyr{#1}{bx}{n}
+%  \face{Bold extended italic}\testcyr{#1}{bx}{it}
+%  \face{Bold extended slanted}\testcyr{#1}{bx}{sl}
+%  \face{Bold extended small caps}\testcyr{#1}{bx}{sc}
+%  \face{Bold extended upright italics}\testcyr{#1}{bx}{ui}
+%  \face{Bold extended outline}\testcyr{#1}{bx}{ol}
+}
+
+\begin{document}
+
+\present{ftm}{Free Times}
+\present{fbk}{Free Bookman}
+\present{fsb}{Free Schoolbook}
+\present{fpl}{Free Paladin}
+\present{fta}{Teams}
+\present{fcr}{Free Courier}
+\present{fag}{Free Avant Garde}
+\present{fhv}{Free Helvetian}
+
+\beginfont{Old Slavic}
+\face{Medium upright}\testcyr{fsj}{m}{n}
+\face{Medium small caps}\testcyr{fsj}{m}{sc}
+
+\beginfont{Chancery}
+\face{Medium italic}\testcyr{fzc}{m}{it}
+
+\end{document}
+
+\beginfont{Computer Modern Roman}
+
+\face{Medium upright}\testcyr{cmr}{m}{n}
+\face{Medium italic}\testcyr{cmr}{m}{it}
+\face{Medium slanted}\testcyr{cmr}{m}{sl}
+\face{Medium small caps}\testcyr{cmr}{m}{sc}
+\face{Medium upright italics}\testcyr{cmr}{m}{ui}
+
+\face{Bold upright}\testcyr{cmr}{b}{n}
+
+\face{Bold extended upright}\testcyr{cmr}{bx}{n}
+\face{Bold extended italic}\testcyr{cmr}{bx}{it}
+\face{Bold extended slanted}\testcyr{cmr}{bx}{sl}
+\face{Bold extended small caps}\testcyr{cmr}{bx}{sc}
+\face{Bold extended upright italics}\testcyr{cmr}{bx}{ui}
+\face{Bold extended outline}\testcyr{cmr}{bx}{ol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\beginfont{Computer Modern Sans Serif}
+
+\face{Medium upright}\testcyr{cmss}{m}{n}
+\face{Medium slanted}\testcyr{cmss}{m}{sl}
+\face{Medium small caps}\testcyr{cmss}{m}{sc}
+
+\face{Bold extended upright}\testcyr{cmss}{bx}{n}
+\face{Bold extended slanted}\testcyr{cmss}{bx}{sl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\beginfont{Computer Modern Typewriter}
+
+\face{Medium upright}\testcyr{cmtt}{m}{n}
+\face{Medium italic}\testcyr{cmtt}{m}{it}
+\face{Medium slanted}\testcyr{cmtt}{m}{sl}
+\face{Medium small caps}\testcyr{cmtt}{m}{sc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\beginfont{Computer Modern Fibonacci}
+
+\face{Medium upright}\testcyr{cmfib}{m}{n}
+\face{Medium italic}\testcyr{cmfib}{m}{it}
+\face{Medium slanted}\testcyr{cmfib}{m}{sl}
+\face{Medium small caps}\testcyr{cmfib}{m}{sc}
+\face{Medium upright italics}\testcyr{cmfib}{m}{ui}
+\face{Medium outline}\testcyr{cmfib}{m}{ol}
+
+\face{Bold upright}\testcyr{cmfib}{b}{n}
+\face{Bold italic}\testcyr{cmfib}{b}{it}
+\face{Bold slanted}\testcyr{cmfib}{b}{sl}
+\face{Bold small caps}\testcyr{cmfib}{b}{sc}
+\face{Bold upright italics}\testcyr{cmfib}{b}{ui}
+\face{Bold outline}\testcyr{cmfib}{b}{ol}
+
+\face{Condensed upright}\testcyr{cmfib}{c}{n}
+\face{Condensed italic}\testcyr{cmfib}{c}{it}
+\face{Condensed slanted}\testcyr{cmfib}{c}{sl}
+\face{Condensed small caps}\testcyr{cmfib}{c}{sc}
+\face{Condensed upright italics}\testcyr{cmfib}{c}{ui}
+\face{Condensed outline}\testcyr{cmfib}{c}{ol}
+
+\face{Bold condensed upright}\testcyr{cmfib}{bc}{n}
+\face{Bold condensed italic}\testcyr{cmfib}{bc}{it}
+\face{Bold condensed slanted}\testcyr{cmfib}{bc}{sl}
+\face{Bold condensed small caps}\testcyr{cmfib}{bc}{sc}
+\face{Bold condensed upright italics}\testcyr{cmfib}{bc}{ui}
+\face{Bold condensed outline}\testcyr{cmfib}{bc}{ol}
+
+\face{Bold extended upright}\testcyr{cmfib}{bx}{n}
+\face{Bold extended italic}\testcyr{cmfib}{bx}{it}
+\face{Bold extended slanted}\testcyr{cmfib}{bx}{sl}
+\face{Bold extended small caps}\testcyr{cmfib}{bx}{sc}
+\face{Bold extended upright italics}\testcyr{cmfib}{bx}{ui}
+\face{Bold extended outline}\testcyr{cmfib}{bx}{ol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\beginfont{Computer Modern Roman}
+
+\face{Medium upright}\testcyr{cmr}{m}{n}
+\face{Medium italic}\testcyr{cmr}{m}{it}
+\face{Medium slanted}\testcyr{cmr}{m}{sl}
+\face{Medium small caps}\testcyr{cmr}{m}{sc}
+\face{Medium upright italics}\testcyr{cmr}{m}{ui}
+\face{Medium outline}\testcyr{cmr}{m}{ol}
+
+\face{Bold upright}\testcyr{cmr}{b}{n}
+\face{Bold italic}\testcyr{cmr}{b}{it}
+\face{Bold slanted}\testcyr{cmr}{b}{sl}
+\face{Bold small caps}\testcyr{cmr}{b}{sc}
+\face{Bold upright italics}\testcyr{cmr}{b}{ui}
+\face{Bold outline}\testcyr{cmr}{b}{ol}
+
+\face{Condensed upright}\testcyr{cmr}{c}{n}
+\face{Condensed italic}\testcyr{cmr}{c}{it}
+\face{Condensed slanted}\testcyr{cmr}{c}{sl}
+\face{Condensed small caps}\testcyr{cmr}{c}{sc}
+\face{Condensed upright italics}\testcyr{cmr}{c}{ui}
+\face{Condensed outline}\testcyr{cmr}{c}{ol}
+
+\face{Bold condensed upright}\testcyr{cmr}{bc}{n}
+\face{Bold condensed italic}\testcyr{cmr}{bc}{it}
+\face{Bold condensed slanted}\testcyr{cmr}{bc}{sl}
+\face{Bold condensed small caps}\testcyr{cmr}{bc}{sc}
+\face{Bold condensed upright italics}\testcyr{cmr}{bc}{ui}
+\face{Bold condensed outline}\testcyr{cmr}{bc}{ol}
+
+\face{Bold extended upright}\testcyr{cmr}{bx}{n}
+\face{Bold extended italic}\testcyr{cmr}{bx}{it}
+\face{Bold extended slanted}\testcyr{cmr}{bx}{sl}
+\face{Bold extended small caps}\testcyr{cmr}{bx}{sc}
+\face{Bold extended upright italics}\testcyr{cmr}{bx}{ui}
+\face{Bold extended outline}\testcyr{cmr}{bx}{ol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\beginfont{Computer Modern Roman}
+
+\face{Medium upright}\testcyr{cmr}{m}{n}
+\face{Medium italic}\testcyr{cmr}{m}{it}
+\face{Medium slanted}\testcyr{cmr}{m}{sl}
+\face{Medium small caps}\testcyr{cmr}{m}{sc}
+\face{Medium upright italics}\testcyr{cmr}{m}{ui}
+\face{Medium outline}\testcyr{cmr}{m}{ol}
+
+\face{Bold upright}\testcyr{cmr}{b}{n}
+\face{Bold italic}\testcyr{cmr}{b}{it}
+\face{Bold slanted}\testcyr{cmr}{b}{sl}
+\face{Bold small caps}\testcyr{cmr}{b}{sc}
+\face{Bold upright italics}\testcyr{cmr}{b}{ui}
+\face{Bold outline}\testcyr{cmr}{b}{ol}
+
+\face{Condensed upright}\testcyr{cmr}{c}{n}
+\face{Condensed italic}\testcyr{cmr}{c}{it}
+\face{Condensed slanted}\testcyr{cmr}{c}{sl}
+\face{Condensed small caps}\testcyr{cmr}{c}{sc}
+\face{Condensed upright italics}\testcyr{cmr}{c}{ui}
+\face{Condensed outline}\testcyr{cmr}{c}{ol}
+
+\face{Bold condensed upright}\testcyr{cmr}{bc}{n}
+\face{Bold condensed italic}\testcyr{cmr}{bc}{it}
+\face{Bold condensed slanted}\testcyr{cmr}{bc}{sl}
+\face{Bold condensed small caps}\testcyr{cmr}{bc}{sc}
+\face{Bold condensed upright italics}\testcyr{cmr}{bc}{ui}
+\face{Bold condensed outline}\testcyr{cmr}{bc}{ol}
+
+\face{Bold extended upright}\testcyr{cmr}{bx}{n}
+\face{Bold extended italic}\testcyr{cmr}{bx}{it}
+\face{Bold extended slanted}\testcyr{cmr}{bx}{sl}
+\face{Bold extended small caps}\testcyr{cmr}{bx}{sc}
+\face{Bold extended upright italics}\testcyr{cmr}{bx}{ui}
+\face{Bold extended outline}\testcyr{cmr}{bx}{ol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\beginfont{Computer Modern Roman}
+
+\face{Medium upright}\testcyr{cmr}{m}{n}
+\face{Medium italic}\testcyr{cmr}{m}{it}
+\face{Medium slanted}\testcyr{cmr}{m}{sl}
+\face{Medium small caps}\testcyr{cmr}{m}{sc}
+\face{Medium upright italics}\testcyr{cmr}{m}{ui}
+\face{Medium outline}\testcyr{cmr}{m}{ol}
+
+\face{Bold upright}\testcyr{cmr}{b}{n}
+\face{Bold italic}\testcyr{cmr}{b}{it}
+\face{Bold slanted}\testcyr{cmr}{b}{sl}
+\face{Bold small caps}\testcyr{cmr}{b}{sc}
+\face{Bold upright italics}\testcyr{cmr}{b}{ui}
+\face{Bold outline}\testcyr{cmr}{b}{ol}
+
+\face{Condensed upright}\testcyr{cmr}{c}{n}
+\face{Condensed italic}\testcyr{cmr}{c}{it}
+\face{Condensed slanted}\testcyr{cmr}{c}{sl}
+\face{Condensed small caps}\testcyr{cmr}{c}{sc}
+\face{Condensed upright italics}\testcyr{cmr}{c}{ui}
+\face{Condensed outline}\testcyr{cmr}{c}{ol}
+
+\face{Bold condensed upright}\testcyr{cmr}{bc}{n}
+\face{Bold condensed italic}\testcyr{cmr}{bc}{it}
+\face{Bold condensed slanted}\testcyr{cmr}{bc}{sl}
+\face{Bold condensed small caps}\testcyr{cmr}{bc}{sc}
+\face{Bold condensed upright italics}\testcyr{cmr}{bc}{ui}
+\face{Bold condensed outline}\testcyr{cmr}{bc}{ol}
+
+\face{Bold extended upright}\testcyr{cmr}{bx}{n}
+\face{Bold extended italic}\testcyr{cmr}{bx}{it}
+\face{Bold extended slanted}\testcyr{cmr}{bx}{sl}
+\face{Bold extended small caps}\testcyr{cmr}{bx}{sc}
+\face{Bold extended upright italics}\testcyr{cmr}{bx}{ui}
+\face{Bold extended outline}\testcyr{cmr}{bx}{ol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \present{cmr}{Computer Modern Roman}
+% \present{cmss}{Computer Modern Sans Serif}
+% \present{cmtt}{Computer Modern Typewriter}
+% \present{cmfib}{Computer Modern Fibonacci}
+
+
+% \present{cmdh}{Computer Modern Dunhill}
+% \present{cmfr}{Computer Modern Fractur}
+% \present{cmvtt}{Computer Modern Elite}
+
+% \marginpar{Upright}\textup{\testcyr}
+

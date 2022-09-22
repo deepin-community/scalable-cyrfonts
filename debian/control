@@ -1,0 +1,84 @@
+Source: scalable-cyrfonts
+Maintainer: Anton Zinoviev <zinoviev@debian.org>
+Section: text
+Priority: optional
+Standards-Version: 3.8.1
+Build-Depends: debhelper (>= 8.1.0~), tar (>=1.13.18), bzip2, fontforge, gsfonts, zip, tofrodos, xfonts-utils, texlive, texlive-font-utils, tex-common (>= 1.18)
+
+Package: t1-cyrillic
+Architecture: all
+Description: A basic set of free PostScript fonts
+ This package includes free Type1 fonts for the following font
+ families: Free Times, Free Helvetian, Free Helvetian Condensed, Free
+ Courier, Free Avant Garde, Free Paladin, Free Schoolbook, Free
+ Bookman and Free Chancery.
+ .
+ These fonts cover the Latin1 and Latin2 character sets and partially
+ the most popular Cyrillic character sets.
+ .
+ The fonts look like the fonts in the Adobe basic set of PostScript
+ fonts, but the font names are customized to avoid any trademark
+ infringements.
+Section: x11
+Priority: optional
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}
+Suggests: xfs (>=4.0) | xserver
+Conflicts: xbase-clients (<< 4.0), scalable-cyrfonts-x11, scalable-cyrfonts
+Replaces: scalable-cyrfonts-x11, scalable-cyrfonts
+
+Package: t1-teams
+Architecture: all
+Description: Teams -- a PostScript font covering ASCII and basic Cyrillic
+ This is a Type1 font family (with regular, bold, slanted and
+ slanted-bold faces) developed by TopTeam Co. -- a Bulgarian
+ publishing house.  They use it to publish their newspapers and
+ magazines.
+ .
+ These fonts cover only the English Latin characters and the
+ Bulgarian and Russian Cyrillic characters.
+Section: x11
+Priority: optional
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}
+Suggests: xfs (>=4.0) | xserver
+Conflicts: xbase-clients (<< 4.0), scalable-cyrfonts-x11, scalable-cyrfonts
+Replaces: scalable-cyrfonts-x11, scalable-cyrfonts
+
+Package: t1-oldslavic
+Architecture: all
+Description: OldSlavic -- a Cyrillic Type1 font with medieval design
+ The letters in this font resemble the look of the medieval Cyrillic
+ printed books.
+ .
+ This font is not for general use.  It contains only the basic
+ Cyrillic and Latin letters; there are almost no punctuation signs in
+ it.
+Section: text
+Priority: optional
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}
+Suggests: xfs (>=4.0) | xserver
+Conflicts: xbase-clients (<< 4.0), scalable-cyrfonts-x11, scalable-cyrfonts
+Replaces: scalable-cyrfonts-x11, scalable-cyrfonts
+
+Package: scalable-cyrfonts-tex
+Architecture: all
+Description: Scalable Cyrillic fonts for TeX
+ This package installs all needed TeX font metcic files, virtual
+ fonts, font definitions and some style packages in order to provide
+ TeX with the following font families: Free Times, Free Helvetian,
+ Free Helvetian Condensed, Free Courier, Free Avant Garde, Free
+ Paladin, Free Schoolbook, Free Bookman, Free Chancery, Teams and
+ OldSlavic.
+ .
+ If you want to have these font families available to X11 and
+ Defoma-aware applications (Ghostscript, Grace, SciGraphica) then
+ please install the packages t1-cyrillic, t1-teams and t1-oldslavic.
+ .
+ In order to make this package functional please read the file
+ /usr/share/doc/scalable-cyrfonts-tex/README.Debian.
+Section: tex
+Priority: optional
+Depends: ${misc:Depends}
+Suggests: t1-cyrillic, t1-teams, t1-oldslavic

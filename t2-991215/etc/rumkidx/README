@@ -1,0 +1,44 @@
+This is `rumakeindex', a wrapper for `makeindex' which allows one to
+get properly sorted index when Russian letters are used in index
+entries. It is part of the T2 package.
+
+You will need:
+
+1) LaTeX setup based on a T2 package.
+
+2) MAKEINDEX utility which does not have problems with 8-bit characters.
+   mkidx32.exe in a emTeX distribution is Ok, as well as makeindex
+   from web2c distribution.
+
+3) SED binary. It is available on any UNIX box. For DOS you can find
+   it at
+
+  ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2gnu/sed118b.zip
+
+   Copy `sed.exe' to a directory contained in %PATH% environment
+   variable.
+
+   Under UNIX, the `tr' utility is also used. It is emulated via the
+   `y' SED command in the DOS scripts.
+
+4) The `rumakeindex' script (or batch file `rumkidxd.bat' under DOS,
+   or `rumkidxw.bat' under Windows).
+
+If you are using the T2 package and are making indices with russian
+letters, then run `rumakeindex' (or `rumkidxd.bat' under DOS, or
+`rumkidxw.bat' under Windows) instead of `makeindex' (or `mkidx32.exe'
+under DOS).
+
+If you are using emTeX under DOS, copy *.sed files to `\emtex\data'
+directory, and copy `*.bat' files to `\emtex\bin' directory.
+
+If you are using UNIX, copy the `rumakeindex' shell script to
+e.g. `/usr/local/bin' directory.
+
+Note: the encoding of generated .ind files is:
+
+  koi8-r for `rumakeindex'  (UNIX)
+  cp866  for `rumkidxd.bat' (MS-DOS)
+  cp1251 for `rumkidxw.bat' (MS-Windows)
+
+If you need some other encoding, just change the encoding of scripts.

@@ -1,0 +1,43 @@
+The names of the fonts in this package have been changed.  The
+upstream uses the same names as the fonts in the package gsfonts.  If
+I used the same names this would make imposible to use together both
+packages.  So when I created the Debian packages I decided to use
+other names, namely the names used by Adobe.
+
+Afterwards I was pointed that am not allowed to use these names as
+they are trademarks.  Now all new font names start with the word
+`Free', it ensures the uniqueness of them.  The other part of the
+names are dictionary English words, this ensures that no part of the
+names is a registered trademark.
+
+I have contacted the upstream maintainer in order to ask him how to
+call the fonts, but unfortunately he went on a journey and was not
+able to answer me.  Now a few months later I decided to upload new
+packages to Debian with names choosed by me as the packages still use
+registered trademarks.  It is possible however that in future I will
+take into account the preferences of the upstream maintainer.
+
+Note that /etc/X11/fonts/Type1/t1-cyrillic.alias contains commented
+lines which if uncommented define the old font names as aliases.
+
+This table summarizes the fontname changings:
+
+Current Debian name       Old Debian name         Upstream name
+---------------------------------------------------------------------
+Free Times                Times                   Nimbus Roman No9 L
+Free Helvetian            Helvetica               Nimbus Sans L
+Free Helvetian Condensed  Helvetica [*]           Nimbus Sans L [*]
+Free Courier              Courier                 Nimbus Mono L
+Free Schoolbook           New Century Schoolbook  Century Schoolbook L
+Free Avant Garde          Avant Garde Gothic      URW Gothic L
+Free Bookman              Bookman                 URW Bookman L
+Free Paladin              Palatino                URW Palladio L
+Free Chancery             Chancery                URW Chancery L
+
+[*] The narrowed versions of `Helvetica' are packaged with family
+`Free Helvetian Condensed'.  This is so because many applications seam
+to ignore fonts with width != normal when fonts with width == normal
+are present.
+
+--
+Anton Zinoviev <zinoviev@debian.org>

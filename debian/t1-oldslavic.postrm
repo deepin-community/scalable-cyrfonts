@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#DEBHELPER#
+
+case "$1" in
+purge|remove|disappear)
+   if which xftcache >/dev/null 2>&1; then
+       xftcache /usr/X11R6/lib/X11/fonts/Type1
+       xftcache /usr/share/fonts/X11/Type1
+   fi
+   ;;
+esac
+
+case "$1" in
+purge|remove|disappear)
+   if which fc-cache >/dev/null 2>&1; then
+       fc-cache /usr/X11R6/lib/X11/fonts/Type1
+       fc-cache /usr/share/fonts/X11/Type1
+   fi
+   ;;
+esac
+

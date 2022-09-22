@@ -1,0 +1,8 @@
+#!/usr/bin/fontforge
+
+Open ($1);
+if ($2 == "y")
+   MergeKern ($1:r + ".afm");
+endif
+Save ($1:r + ".sfd");
+Close ();

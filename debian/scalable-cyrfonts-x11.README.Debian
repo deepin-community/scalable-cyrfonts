@@ -1,0 +1,19 @@
+This package makes the fonts of the package scalable-cyrfonts
+available to the X server.  Via fonts.alias it provides scalable
+analogues to the fonts in the packages xfonts-bolkhov and
+xfonts-cronyx.  This package does not contain any fonts itself but
+only symbolic links to the fonts from the package scalable-cyrfonts.
+
+Please note that for proper reencoding into different Cyrillic
+encodings this package requires capable X server or font server.  This
+means that you have to use the modular X server from the package
+xserver-xfree86.  If you had to use some of the old X servers, you
+should make these fonts available to the X server via font server.
+
+Note also that the Unicode support for Type1 fonts of the `type1'
+backend of XFree86 is quiet limited.  If you need proper Unicode
+support you will have to use the `freetype' backend of XFree86 version
+4.3 or next.
+
+--
+Anton Zinoviev <zinoviev@debian.org>

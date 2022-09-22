@@ -1,0 +1,5 @@
+% AFM-files are too big, so we need to enlarge TeX:
+
+main_memory = 7000000
+buf_size = 500000
+

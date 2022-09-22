@@ -1,0 +1,27 @@
+#! /bin/sh
+
+set -e
+
+case "$1" in
+    install|upgrade)
+        if dpkg --compare-versions "$2" lt 4.14; then
+	    if [ -x "which defoma-font 2>/dev/null" ]; then
+		defoma-font purge /etc/defoma/hints/t1-cyrillic.hints
+	    fi
+        fi
+    ;;
+
+    abort-upgrade)
+    ;;
+
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 0
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
+
+

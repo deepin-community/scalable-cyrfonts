@@ -1,0 +1,332 @@
+#!/usr/bin/awk -f
+
+BEGIN {
+    allowed["A"] = "yes";
+    allowed["a"] = "yes";
+    allowed["Acute"] = "yes";
+    allowed["acute"] = "yes";
+    allowed["afii10017"] = "yes";
+    allowed["afii10018"] = "yes";
+    allowed["afii10019"] = "yes";
+    allowed["afii10020"] = "yes";
+    allowed["afii10021"] = "yes";
+    allowed["afii10022"] = "yes";
+    allowed["afii10023"] = "yes";
+    allowed["afii10024"] = "yes";
+    allowed["afii10025"] = "yes";
+    allowed["afii10026"] = "yes";
+    allowed["afii10027"] = "yes";
+    allowed["afii10028"] = "yes";
+    allowed["afii10029"] = "yes";
+    allowed["afii10030"] = "yes";
+    allowed["afii10031"] = "yes";
+    allowed["afii10032"] = "yes";
+    allowed["afii10033"] = "yes";
+    allowed["afii10034"] = "yes";
+    allowed["afii10035"] = "yes";
+    allowed["afii10036"] = "yes";
+    allowed["afii10037"] = "yes";
+    allowed["afii10038"] = "yes";
+    allowed["afii10039"] = "yes";
+    allowed["afii10040"] = "yes";
+    allowed["afii10041"] = "yes";
+    allowed["afii10042"] = "yes";
+    allowed["afii10043"] = "yes";
+    allowed["afii10044"] = "yes";
+    allowed["afii10045"] = "yes";
+    allowed["afii10046"] = "yes";
+    allowed["afii10047"] = "yes";
+    allowed["afii10048"] = "yes";
+    allowed["afii10049"] = "yes";
+    allowed["afii10050"] = "yes";
+    allowed["afii10051"] = "yes";
+    allowed["afii10052"] = "yes";
+    allowed["afii10053"] = "yes";
+    allowed["afii10054"] = "yes";
+    allowed["afii10055"] = "yes";
+    allowed["afii10056"] = "yes";
+    allowed["afii10057"] = "yes";
+    allowed["afii10058"] = "yes";
+    allowed["afii10059"] = "yes";
+    allowed["afii10060"] = "yes";
+    allowed["afii10061"] = "yes";
+    allowed["afii10062"] = "yes";
+    allowed["afii10063"] = "yes";
+    allowed["afii10064"] = "yes";
+    allowed["afii10065"] = "yes";
+    allowed["afii10066"] = "yes";
+    allowed["afii10067"] = "yes";
+    allowed["afii10068"] = "yes";
+    allowed["afii10069"] = "yes";
+    allowed["afii10070"] = "yes";
+    allowed["afii10071"] = "yes";
+    allowed["afii10072"] = "yes";
+    allowed["afii10073"] = "yes";
+    allowed["afii10074"] = "yes";
+    allowed["afii10075"] = "yes";
+    allowed["afii10076"] = "yes";
+    allowed["afii10077"] = "yes";
+    allowed["afii10078"] = "yes";
+    allowed["afii10079"] = "yes";
+    allowed["afii10080"] = "yes";
+    allowed["afii10081"] = "yes";
+    allowed["afii10082"] = "yes";
+    allowed["afii10083"] = "yes";
+    allowed["afii10084"] = "yes";
+    allowed["afii10085"] = "yes";
+    allowed["afii10086"] = "yes";
+    allowed["afii10087"] = "yes";
+    allowed["afii10088"] = "yes";
+    allowed["afii10089"] = "yes";
+    allowed["afii10090"] = "yes";
+    allowed["afii10091"] = "yes";
+    allowed["afii10092"] = "yes";
+    allowed["afii10093"] = "yes";
+    allowed["afii10094"] = "yes";
+    allowed["afii10095"] = "yes";
+    allowed["afii10096"] = "yes";
+    allowed["afii10097"] = "yes";
+    allowed["afii10098"] = "yes";
+    allowed["afii10099"] = "yes";
+    allowed["afii10100"] = "yes";
+    allowed["afii10101"] = "yes";
+    allowed["afii10102"] = "yes";
+    allowed["afii10103"] = "yes";
+    allowed["afii10104"] = "yes";
+    allowed["afii10105"] = "yes";
+    allowed["afii10106"] = "yes";
+    allowed["afii10107"] = "yes";
+    allowed["afii10108"] = "yes";
+    allowed["afii10109"] = "yes";
+    allowed["afii10110"] = "yes";
+    allowed["afii10145"] = "yes";
+    allowed["afii10146"] = "yes";
+    allowed["afii10147"] = "yes";
+    allowed["afii10148"] = "yes";
+    allowed["afii10192"] = "yes";
+    allowed["afii10193"] = "yes";
+    allowed["afii10194"] = "yes";
+    allowed["afii10195"] = "yes";
+    allowed["afii10196"] = "yes";
+    allowed["afii10831"] = "yes";
+    allowed["afii10832"] = "yes";
+    allowed["afii10846"] = "yes";
+    allowed["afii61352"] = "yes";
+    allowed["ampersand"] = "yes";
+    allowed["asciicircum"] = "yes";
+    allowed["asciitilde"] = "yes";
+    allowed["asterisk"] = "yes";
+    allowed["at"] = "yes";
+    allowed["B"] = "yes";
+    allowed["b"] = "yes";
+    allowed["backslash"] = "yes";
+    allowed["bar"] = "yes";
+    allowed["braceleft"] = "yes";
+    allowed["braceright"] = "yes";
+    allowed["bracketleft"] = "yes";
+    allowed["bracketright"] = "yes";
+    allowed["C"] = "yes";
+    allowed["c"] = "yes";
+    allowed["Caron"] = "yes";
+    allowed["caron"] = "yes";
+    allowed["colon"] = "yes";
+    allowed["comma"] = "yes";
+    allowed["copyright"] = "yes";
+    allowed["currency"] = "yes";
+    allowed["cyrBreve"] = "yes";
+    allowed["cyrbreve"] = "yes";
+    allowed["cyrFlex"] = "yes";
+    allowed["cyrflex"] = "yes";
+    allowed["D"] = "yes";
+    allowed["d"] = "yes";
+    allowed["dagger"] = "yes";
+    allowed["daggerdbl"] = "yes";
+    allowed["dblGrave"] = "yes";
+    allowed["dblgrave"] = "yes";
+    allowed["degree"] = "yes";
+    allowed["Dieresis"] = "yes";
+    allowed["dieresis"] = "yes";
+    allowed["dollar"] = "yes";
+    allowed["dotlessi"] = "yes";
+    allowed["E"] = "yes";
+    allowed["e"] = "yes";
+    allowed["eight"] = "yes";
+    allowed["ellipsis"] = "yes";
+    allowed["emdash"] = "yes";
+    allowed["endash"] = "yes";
+    allowed["equal"] = "yes";
+    allowed["Euro"] = "yes";
+    allowed["exclam"] = "yes";
+    allowed["F"] = "yes";
+    allowed["f"] = "yes";
+    allowed["ff"] = "yes";
+    allowed["ffi"] = "yes";
+    allowed["ffl"] = "yes";
+    allowed["fi"] = "yes";
+    allowed["five"] = "yes";
+    allowed["fl"] = "yes";
+    allowed["four"] = "yes";
+    allowed["G"] = "yes";
+    allowed["g"] = "yes";
+    allowed["Grave"] = "yes";
+    allowed["grave"] = "yes";
+    allowed["greater"] = "yes";
+    allowed["guillemotleft"] = "yes";
+    allowed["guillemotright"] = "yes";
+    allowed["H"] = "yes";
+    allowed["h"] = "yes";
+    allowed["Hungarumlaut"] = "yes";
+    allowed["hungarumlaut"] = "yes";
+    allowed["hyphen"] = "yes";
+    allowed["I"] = "yes";
+    allowed["i"] = "yes";
+    allowed["J"] = "yes";
+    allowed["j"] = "yes";
+    allowed["K"] = "yes";
+    allowed["k"] = "yes";
+    allowed["L"] = "yes";
+    allowed["l"] = "yes";
+    allowed["less"] = "yes";
+    allowed["logicalnot"] = "yes";
+    allowed["M"] = "yes";
+    allowed["m"] = "yes";
+    allowed["Macron"] = "yes";
+    allowed["macron"] = "yes";
+    allowed["N"] = "yes";
+    allowed["n"] = "yes";
+    allowed["nine"] = "yes";
+    allowed[".notdef"] = "yes";
+    allowed["numbersign"] = "yes";
+    allowed["O"] = "yes";
+    allowed["o"] = "yes";
+    allowed["one"] = "yes";
+    allowed["P"] = "yes";
+    allowed["p"] = "yes";
+    allowed["paragraph"] = "yes";
+    allowed["parenleft"] = "yes";
+    allowed["parenright"] = "yes";
+    allowed["percent"] = "yes";
+    allowed["period"] = "yes";
+    allowed["perthousand"] = "yes";
+    allowed["plus"] = "yes";
+    allowed["Q"] = "yes";
+    allowed["q"] = "yes";
+    allowed["question"] = "yes";
+    allowed["quilsinglleft"] = "yes";
+    allowed["quilsinglright"] = "yes";
+    allowed["quotedbl"] = "yes";
+    allowed["quotedblbase"] = "yes";
+    allowed["quotedblleft"] = "yes";
+    allowed["quotedblright"] = "yes";
+    allowed["quoteleft"] = "yes";
+    allowed["quoteright"] = "yes";
+    allowed["quotesinglbase"] = "yes";
+    allowed["quotesingle"] = "yes";
+    allowed["R"] = "yes";
+    allowed["r"] = "yes";
+    allowed["registered"] = "yes";
+    allowed["S"] = "yes";
+    allowed["s"] = "yes";
+    allowed["section"] = "yes";
+    allowed["semicolon"] = "yes";
+    allowed["seven"] = "yes";
+    allowed["six"] = "yes";
+    allowed["slash"] = "yes";
+    allowed["space"] = "yes";
+    allowed["T"] = "yes";
+    allowed["t"] = "yes";
+    allowed["three"] = "yes";
+    allowed["trademark"] = "yes";
+    allowed["two"] = "yes";
+    allowed["U"] = "yes";
+    allowed["u"] = "yes";
+    allowed["underscore"] = "yes";
+    allowed["V"] = "yes";
+    allowed["v"] = "yes";
+    allowed["W"] = "yes";
+    allowed["w"] = "yes";
+    allowed["X"] = "yes";
+    allowed["x"] = "yes";
+    allowed["Y"] = "yes";
+    allowed["y"] = "yes";
+    allowed["yen"] = "yes";
+    allowed["Z"] = "yes";
+    allowed["z"] = "yes";
+    allowed["zero"] = "yes";
+}
+
+/EncodingScheme/ {
+    print "EncodingScheme FontSpecific";
+    next;
+}
+
+/StartCharMetrics/, /EndCharMetrics/ {
+    if ($0 ~ /StartCharMetrics/)
+	{
+	    numchars = 0;
+	    next;
+	}
+    if ($0 ~ /EndCharMetrics/)
+	{
+	    print "StartCharMetrics", numchars;
+	    for (i=1; i<=numchars; i++)
+		{
+		    print met [i];
+		}
+	    print "EndCharMetrics";
+	    next;
+	}
+    nw = split ($0, word);
+    cur = 1;
+    adobename = "";
+    line = "";
+    while (word [cur] != "")
+	{
+	    if (word [cur] == "N")
+		{
+		    adobename = word [cur + 1];
+		}
+	    line = line " " word [cur];
+	    while (cur != nw && word [cur] != ";")
+		{
+		    cur = cur + 1;
+		    line = line " " word [cur];
+		}
+	    cur = cur + 1;
+	}
+    if (allowed [adobename] == "yes")
+	{
+	    numchars++;
+	    met [numchars] = line;
+	}
+    next;
+}
+
+/StartKernPairs/, /EndKernPairs/ {
+    if ($0 ~ /StartKernPairs/)
+	{
+	    numchars = 0;
+	    next;
+	}
+    if ($0 ~ /EndKernPairs/) 
+	{
+	    print "StartKernPairs", numchars;
+	    for (i=1; i<=numchars; i++)
+		{
+		    print met [i];
+		}
+	    print "EndKernPairs";
+	    next;
+	}
+    if (allowed [$2] == "yes" && allowed [$3] == "yes")
+	{
+	    numchars++;
+	    met [numchars] = $0;
+	}
+    next;
+}
+
+{
+    print;
+}
+
